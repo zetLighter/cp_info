@@ -1,8 +1,5 @@
 
-def some():
-    A = int(input("Укажите начало интервала: "))
-    B = int(input("Укажите конец интервала: "))
-
+def some(A, B):
     sum = 0
 
     for elem in range(A, B+1):
@@ -10,5 +7,4 @@ def some():
             sum += elem
     return sum
 
-print(some())
-
+print(some(4, 13))

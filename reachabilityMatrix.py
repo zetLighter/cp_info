@@ -45,14 +45,25 @@ def getStrongConectivityMatrix(reachibility_matrix, transposed_reachability_matr
     strongConectivityMatrix = [[0] * len(adjacency_matrix)] * len(adjacency_matrix)
     for i in range(len(adjacency_matrix)):
         for j in range(len(adjacency_matrix)):
-            if reachibility_matrix[i][j] == 1 and reachibility_matrix[i][j] == 1:
-                strongConectivityMatrix = 1
+            if reachibility_matrix[i][j] == 1 and transposed_reachability_matrix[i][j] == 1:
+                strongConectivityMatrix[i][j] = 1
             else:
-                strongConectivityMatrix = 0
+                strongConectivityMatrix[i][j] = 0
+
+def get_strong_conectivity_components(strongConectivityMatrix):
+    visited = [False] * len(strongConectivityMatrix)
+    for in range(len(strongConectivityMatrix)):
+        if not visited[i]:
+            component = [i]
+            visited[i] = True
+
+            for j in range(len(strongConectivityMatrix))
+            
 
 
-transposed_reachability_matrix = get_reachability_matrix(get_transposed_matrix(adjacency_matrix))
+
 reachibility_matrix = get_reachability_matrix(adjacency_matrix)
+transposed_reachability_matrix = get_transposed_matrix(reachibility_matrix)
 strongConectivityMatrix = getStrongConectivityMatrix(reachibility_matrix, transposed_reachability_matrix)
 
 for row in strongConectivityMatrix:
